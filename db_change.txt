@@ -1,0 +1,31 @@
+ALTER TABLE  `sub_group` ADD  `preference_id` INT NOT NULL AFTER  `facebook_id`
+
+18 sep
+ALTER TABLE  `sub_group` ADD  `sessions` VARCHAR( 45 ) NOT NULL AFTER  `date`
+ALTER TABLE  `sub_group` CHANGE  `sessions`  `sessions` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+
+24sep
+
+ALTER TABLE  `tbluser` ADD  `name` VARCHAR( 45 ) NOT NULL AFTER  `facebook_id`;
+ALTER TABLE  admin_finalize ADD  `second_msg` text NOT NULL AFTER  `group_name`;
+ALTER TABLE  `admin_finalize` ADD  `reminder_time` VARCHAR( 15 ) NOT NULL AFTER  `select_status`
+
+
+26sep
+ALTER TABLE  `place` CHANGE  `stars`  `stars` DECIMAL( 16, 3 ) NOT NULL
+
+
+
+truncate:
+TRUNCATE TABLE  appsetting;
+TRUNCATE TABLE  admin_finalize;
+TRUNCATE TABLE  group_date;
+TRUNCATE TABLE  group_place;
+TRUNCATE TABLE  interested_userdate;
+TRUNCATE TABLE  interested_userplace;
+TRUNCATE TABLE  place;
+TRUNCATE TABLE  tbldevice;
+TRUNCATE TABLE  tblgroup;
+TRUNCATE TABLE  tbluser;
+TRUNCATE TABLE  user_preference;
+TRUNCATE TABLE  sub_group;
